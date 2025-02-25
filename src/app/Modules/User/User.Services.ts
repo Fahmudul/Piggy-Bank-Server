@@ -22,7 +22,11 @@ const RegisterUserInDB = async (payload: IUser) => {
       break;
     }
     case "agent": {
-      result = await User.create({ ...payload, canAccess: false });
+      result = await User.create({
+        ...payload,
+        canAccess: false,
+        balance: 100000,
+      });
       break;
     }
   }
